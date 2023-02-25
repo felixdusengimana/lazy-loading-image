@@ -1,37 +1,10 @@
-import { NextSeo } from "next-seo"
 import Link from 'next/link'
+import Layout from '@components/layout'
 
 export default function Albums(props) {
   const { albums } = props
   return (
-    <>
-    <NextSeo
-      title="Albums"
-      description="Albums"
-      canonical="https://www.canonical.ie/"
-      openGraph={{
-        url: 'https://www.url.ie/a',
-        title: 'Albums',
-        description: 'Albums',
-        images: [
-          {
-            url: 'https://www.example.ie/og-image-01.jpg',
-            width: 800,
-            height: 600,
-            alt: 'Og Image Alt',
-          },
-          {
-            url: 'https://www.example.ie/og-image-02.jpg',
-            width: 900,
-            height: 800,
-            alt: 'Og Image Alt Second',
-          },
-          { url: 'https://www.example.ie/og-image-03.jpg' },
-          { url: 'https://www.example.ie/og-image-04.jpg' },
-        ],
-        site_name: 'Felix Blog',
-      }}
-    />
+    <Layout>
       <h1 className="text-black font-bold text-3xl">Albums</h1>
       <div className="flex flex-shrink-0 gap-2 flex-wrap">
       {
@@ -42,7 +15,7 @@ export default function Albums(props) {
         ))
       }
       </div>
-    </>
+    </Layout>
   )
 }
 export async function getStaticProps() {

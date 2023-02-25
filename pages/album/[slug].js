@@ -1,39 +1,12 @@
-import { NextSeo } from 'next-seo'
 import React from 'react'
-import BlurImage from '../../components/BlurImage'
 import Link from 'next/link'
+import BlurImage from '@components/BlurImage'
+import Layout from '@components/layout'
 
 export default function AlbumPhotos(props) {
   const { album } = props
   return (
-    <div className='max-w-[95vw] mx-auto'>
-      <NextSeo
-        title={`Album Photos`}
-        description="Album Photos"
-        canonical="https://www.canonical.ie/"
-        openGraph={{
-          url: 'https://www.url.ie/a',
-          title: 'Album Photos',
-          description: 'Album Photos',
-          images: [
-            {
-              url: 'https://www.example.ie/og-image-01.jpg',
-              width: 800,
-              height: 600,
-              alt: 'Og Image Alt',
-            },
-            {
-              url: 'https://www.example.ie/og-image-02.jpg',
-              width: 900,
-              height: 800,
-              alt: 'Og Image Alt Second',
-            },
-            { url: 'https://www.example.ie/og-image-03.jpg' },
-            { url: 'https://www.example.ie/og-image-04.jpg' },
-          ],
-          site_name: 'Felix Blog',
-        }}
-      />
+    <Layout>
       <div className='flex items-center gap-4'>
       <Link href={"/"} className='w-6 h-6 bg-blue-600 font-bold text-white flex items-center justify-center px-10 py-5 rounded-sm' title='back'>&larr;</Link>
       <h1 className="text-black font-bold text-3xl py-5">Album Photos</h1>
@@ -47,7 +20,7 @@ export default function AlbumPhotos(props) {
           )
           )}
       </div>
-    </div>
+    </Layout>
   )
 }
 
