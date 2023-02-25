@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import React from 'react'
 import BlurImage from '../../components/BlurImage'
+import Link from 'next/link'
 
 export default function AlbumPhotos(props) {
   const { album } = props
@@ -33,7 +34,10 @@ export default function AlbumPhotos(props) {
           site_name: 'Felix Blog',
         }}
       />
+      <div className='flex items-center gap-4'>
+      <Link href={"/"} className='w-6 h-6 bg-blue-600 font-bold text-white flex items-center justify-center px-10 py-5 rounded-sm' title='back'>&larr;</Link>
       <h1 className="text-black font-bold text-3xl py-5">Album Photos</h1>
+      </div>
       <div className=" flex flex-shrink-0 gap-2 flex-wrap">
       {
           album?.map((post) => (
